@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Keyword Search Volume Extractor GSC",
+  "description": "Retrieve & download keyword volume directly inside Google Search Console UI.",
+  "version": "1",
+  "icons": {
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["code.js"],
+      "matches": ["https://search.google.com/*"],
+      "all_frames": true,
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "storage",
+    "activeTab", 
+    "scripting"
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "action": {
+    "default_title": "Click to reload"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
+
