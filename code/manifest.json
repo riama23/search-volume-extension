@@ -9,7 +9,7 @@
   "content_scripts": [
     {
       "js": ["code.js"],
-      "matches": ["https://search.google.com/*"],
+      "matches": ["https://search.google.com/*/performance/search-analytics*"],
       "all_frames": true,
       "run_at": "document_end"
     }
